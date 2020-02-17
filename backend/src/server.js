@@ -1,5 +1,4 @@
 import app from './app';
 
-app.listen(3333); // Esta separação de arquivos facilita a realizar testes
-
-
+// Esta separação de arquivos facilita a realizar testes
+app.listen(3333);
