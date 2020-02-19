@@ -2,6 +2,8 @@
 import express from 'express';
 // Onde estará programado todas as nossas rotas de comunicação
 import routes from './routes';
+// Onde será feita a nossa conexão com o banco de dados
+import './database';
 
 class App {
   constructor() {
