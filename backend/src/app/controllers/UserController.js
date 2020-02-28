@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 import * as Yup from 'yup';
-import User from '../models/Users';
+import User from '../models/User';
 
 class UserController {
   async store(req, res) {
