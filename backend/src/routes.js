@@ -19,11 +19,17 @@ routes.post('/sessions', SessionController.store);
 
 routes.use(authMiddleware);
 routes.put('/users', UserController.update);
+
 routes.post('/files', upload.single('file'), FileController.store);
+
 routes.get('/providers', ProviderController.index);
+
 routes.post('/appointments', AppointmentsController.store);
 routes.get('/appointments', AppointmentsController.index);
+routes.delete('/appointments/:id', AppointmentsController.delete);
+
 routes.get('/schedule', ScheduleController.index);
+
 routes.get('/notifications', NotificationController.index);
 routes.put('/notifications/:id', NotificationController.update);
 

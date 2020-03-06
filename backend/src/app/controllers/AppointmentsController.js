@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 import * as Yup from 'yup';
-import { startOfHour, parseISO, isBefore, format } from 'date-fns';
+import { startOfHour, parseISO, isBefore, format, subHours } from 'date-fns';
 import pt from 'date-fns/locale/pt';
 import Appointments from '../models/Appointments';
 import User from '../models/User';
@@ -108,6 +108,32 @@ class AppointmentsController {
       content: `Novo agendamento de ${user.name} para ${formattedDate}`,
       user: provider_id,
     });
+
+    return res.json(appointment);
+  }
+
+  async delete(req, res) {
+    const appointment = await Appointments.findByPk(req.params.id);
+
+    // Check if logged-in user owns this appointment
+    if (appointment.user_id !== req.userId) {
+      return res.status(401).json({
+        error: "You don't have permission to cancel this appointment. ",
+      });
+    }
+
+    // Check user are at least 2 hours away from appointment date
+    const atLeast2Hours = subHours(appointment.date, 2);
+
+    if (isBefore(atLeast2Hours, new Date())) {
+      return res
+        .ststus(401)
+        .json({ error: 'You can only cancel appointments 2 hours in advance' });
+    }
+
+    appointment.canceled_at = new Date();
+
+    await appointment.save();
 
     return res.json(appointment);
   }
