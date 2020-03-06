@@ -25,5 +25,6 @@ routes.post('/appointments', AppointmentsController.store);
 routes.get('/appointments', AppointmentsController.index);
 routes.get('/schedule', ScheduleController.index);
 routes.get('/notifications', NotificationController.index);
+routes.put('/notifications/:id', NotificationController.update);
 
 module.exports = routes;
