@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import Bee from 'bee-queue';
 import CancellationMail from '../app/jobs/CancellationMail';
 import redisConfig from '../config/redis';
@@ -30,8 +31,12 @@ class Queue {
     jobs.forEach(job => {
       const { bee, handle } = this.queues[job.key];
 
-      bee.process(handle);
+      bee.on('failed', this.handleFailure).process(handle);
     });
+  }
+
+  handleFailure(job, err) {
+    console.log(`Queue ${job.queue.name}: FAILED`, err);
   }
 }
 
