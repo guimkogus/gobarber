@@ -18,7 +18,7 @@ class AppointmentsController {
       oder: ['date'],
       limit: 10,
       offset: (page - 1) * 10,
-      attributes: ['id', 'date'],
+      attributes: ['id', 'date', 'past', 'cancelable'],
       include: [
         {
           model: User,
