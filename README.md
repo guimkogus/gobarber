@@ -31,6 +31,16 @@ The project still's in development state. Right now I feel like the __API__ is i
 8. [BCryptJS](https://www.npmjs.com/package/bcryptjs)
 9. [JWT](https://jwt.io/)
 10. [Yup](https://github.com/jquense/yup)
+11. [Multer](https://github.com/expressjs/multer)
+12. [Date-FNS](https://date-fns.org/)
+13. [MongoDB](https://www.mongodb.com/)
+14. [Mongoose](https://mongoosejs.com/)
+15. [Nodemailer](https://nodemailer.com/about/)
+16. [Handlebars](https://handlebarsjs.com/)
+17. [Redis](https://www.redislabs.com/lp/node-js-redis/)
+18. [Sentry](https://sentry.io/for/javascript/)
+19. [Youch](https://www.npmjs.com/package/youch)
+20. [DotEnv](https://www.npmjs.com/package/dotenv)
 
 WEB:
 at work
@@ -48,11 +58,12 @@ __Cloning the project:__
 
 __Running the project:__
 
-1. Run your PostgreSQL on port 5432 (I recommend to use a Docker image)
+1. Run your PostgreSQL, MongoDB and Redis databases (I recommend to use a Docker image)
 2. Enter the folder running through the terminal: `cd gobarber`
 3. Run `yarn` to install the project dependencies;
-4. Within the `gobarber/backend` folder, run` yarn dev` to initialize the development API.
-5. Access the routes using Insomnia!
+4. Within the `gobarber/backend` folder, fill ".env.example" file with your enviroment variables
+5. Run `yarn dev` and `yarn queue` to initialize the API communication and processing.
+6. By now, you can test the routes using the Insomnia free REST client!
 
 ## :smirk: Contributing
 
@@ -70,4 +81,4 @@ _ps: After the merge of your pull request is done, you can delete your branch if
 
 ## :memo: License
 
-This project is under the MIT license. See the [LICENSE](./LICENSE.md) file for more details.
+This project is under the MIT license. See the [LICENSE](./LICENSE) file for more details.
