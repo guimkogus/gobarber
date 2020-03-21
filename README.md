@@ -1,3 +1,4 @@
+
 # GoBarber
 
 ## 🤔 About the project
@@ -16,29 +17,30 @@ or connect me on: <a href="https://www.linkedin.com/in/guilherme-marques-kogus-5
 _"Find a barber wherever you're at, whenever you want"._
 
 ### Project State
-The project still's in development state, right now I'm working on my __API__ with NodeJS. The front-end __Web__ and __Mobile__ will be developed as soon as I finish the back-end label.
+The project still's in development state. Right now I feel like the __API__ is in a good state of development and I'll start to work on the front-end __Web__ with ReactJS. The __Mobile__ version will be developed as soon as I finish the web label.
 
 ## :mag_right: Technologies and resources
-[Development environment](./):
-1. Ubuntu (v18.04)
-2. Yarn
-3. Visual Studio Code
-4. Docker
-5. PostgreSQL (on port 5432)
-6. PostBird
-7. Insomnia
-
 [API](./backend):
-1. Node.JS
-2. Express
-3. Sucrase
-4. Nodemon
-5. ESLint
-6. Prettier (AirBnB linting)
-7. Sequelize
-8. BCryptJS
-9. JWT
-10. Yup
+1. [Node.JS](https://nodejs.org/en/)
+2. [Express](https://expressjs.com/)
+3. [Sucrase](https://www.npmjs.com/package/sucrase)
+4. [Nodemon](https://www.npmjs.com/package/nodemon)
+5. [ESLint](https://eslint.org/)
+6. [Prettier](https://prettier.io/)
+7. [Sequelize](https://sequelize.org/)
+8. [BCryptJS](https://www.npmjs.com/package/bcryptjs)
+9. [JWT](https://jwt.io/)
+10. [Yup](https://github.com/jquense/yup)
+11. [Multer](https://github.com/expressjs/multer)
+12. [Date-FNS](https://date-fns.org/)
+13. [MongoDB](https://www.mongodb.com/)
+14. [Mongoose](https://mongoosejs.com/)
+15. [Nodemailer](https://nodemailer.com/about/)
+16. [Handlebars](https://handlebarsjs.com/)
+17. [Redis](https://www.redislabs.com/lp/node-js-redis/)
+18. [Sentry](https://sentry.io/for/javascript/)
+19. [Youch](https://www.npmjs.com/package/youch)
+20. [DotEnv](https://www.npmjs.com/package/dotenv)
 
 WEB:
 at work
@@ -56,11 +58,12 @@ __Cloning the project:__
 
 __Running the project:__
 
-1. Run your PostgreSQL on port 5432 (I recommend to use a Docker image)
+1. Run your PostgreSQL, MongoDB and Redis databases (I recommend to use a Docker image)
 2. Enter the folder running through the terminal: `cd gobarber`
 3. Run `yarn` to install the project dependencies;
-4. Within the `gobarber/backend` folder, run` yarn dev` to initialize the development API.
-5. Access the routes using Insomnia!
+4. Within the `gobarber/backend` folder, fill ".env.example" file with your enviroment variables
+5. Run `yarn dev` and `yarn queue` to initialize the API communication and processing.
+6. By now, you can test the routes using the Insomnia free REST client!
 
 ## :smirk: Contributing
 
@@ -78,4 +81,4 @@ _ps: After the merge of your pull request is done, you can delete your branch if
 
 ## :memo: License
 
-This project is under the MIT license. See the [LICENSE](./LICENSE.md) file for more details.
+This project is under the MIT license. See the [LICENSE](./LICENSE) file for more details.
